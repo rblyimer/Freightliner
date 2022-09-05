@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Freightliner</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/main/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/calculator.css">
+
+    <!-- loader screen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- language translator -->
+    <!-- <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="/path/to/cdn/jquery.slim.min.js"></script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({includedLanguages: 'en,am', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        </script> -->
+    <!-- language translator -->
+</head>
+
+<body>
+    <div class="loader">
+        <div></div>
+    </div>
+    <div class="pagecontent">
+    <!-- Start nav bar -->
+    <header>
+        <!-- Web nav bar -->
+        <a href="index.html"><img src="assets/img/main/logo.png" alt="Logo" class="Sitelogo" /> </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a class="current" href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="calculator.html">Get Estimate</a></li>
+            </ul>
+        </nav>
+        <!-- <div id="google_translate_element"></div> -->
+        <!-- Web nav bar -->
+        <!-- Mobile nav bar -->
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu"><br>
+                <li><a href="index.html">Home</a></li><br>
+                <li><a href="services.html">Services</a></li><br>
+                <li><a href="about.html">About</a></li><br>
+                <li><a href="contact.html">Contact Us</a></li><br>
+                <li><a href="calculator.html">Get Estimate</a></li><br>
+            </ul>
+        </div>
+        <!-- Mobile nav bar -->
+    </header>
+    <!-- End nav bar -->
+    <!-- Calculator Button and Container -->
+    <div class="calculator-button-container">
+        <button class="calculator-button" onclick="revealModal()" data-type="modal">Get Estimate</button>
+    </div>
+    <div id="modal-calculator">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h3>Get An Estimate</h3> -->
+                <span class="close" onclick="closeModal()">Close</span>
+            </div>
+            <div class="modal-body">
+                <h1 class="title">Shipping Estimate Price</h1>
+                <div class="tip">
+                    <br />
+                    <form>
+                        <div class="import-export">
+                        <p>Please select Import or Export:</p>
+                        <input type="radio" id="import" name="import-export" value="import">
+                        <label for="import">Import</label><br>
+                        <input type="radio" id="export" name="import-export" value="export">
+                        <label for="export">Export</label>
+                        <br>
+                        </div>
+                        <div class="bulk-container-import">
+                            <br>
+                        <p>Please select Break Bulk or Containerized:</p>
+                        <input type="radio" id="bulk" name="bulk-container-import" value="bulk">
+                        <label for="bulk">Break Bulk</label><br>
+                        <input type="radio" id="container" name="bulk-container-import" value="container">
+                        <label for="container">Containerized</label><br>
+                        </div>
+                        <div class="bulk-container-export">
+                            <br>
+                            <p>Please select Containerized (Break Bulk coming soon):</p>
+                            <input type="radio" id="bulk2" name="bulk-container-export" value="bulk">
+                            <label for="bulk">Break Bulk</label><br>
+                            <input type="radio" id="container2" name="bulk-container-export" value="container">
+                            <label for="container">Containerized</label><br>
+                        </div>
+                        <div class="truck-rail">
+                            <br>
+                        <p>Please select Mode of Transportation:<br>(Unimodal-From Djibouti to Addis Ababa. Contact us
+                            for more destination rates.)</p>
+
+                        <input type="radio" id="truck" name="Transportation" value="truck" required>
+                        <label for="truck">Truck</label><br>
+                        <input type="radio" id="rail" name="Transportation" value="rail" required>
+                        <label for="rail">Rail</label><br>
+                        </div>
+                       
+                        
+                        <p class="finalSelection">If shipping by Break Bulk, choose Tons and enter the amount of tons of the goods. <br> If
+                            shipping by Container, choose 20 or 40 feet container and enter how many containers will be
+                            needed.</p>
+                        <div class="containers-selection">
+                            <br>
+                            <p>Please checkmark both or either boxes and enter in amount.</p>
+                        <input type="checkbox" id="twentyFeet" name="Shipping Amount" value="twentyFeet"> <label>Number of
+                            20 feet containers: </label><input id="twentyContainerAmount"><br>
+                        <input type="checkbox" id="fortyFeet" name="Shipping Amount" value="fortyFeet"> <label>Number of 40
+                            feet containers:</label> <input id="fortyContainerAmount"><br>
+                        </div>
+                        <div class="tons-input">
+                            <br>
+                            <p>Please enter amount of tons:</p>
+                        <!-- <input type="" id="tons" name="Shipping Amount" value="tons">  -->
+                        <label>Tons:</label> <input
+                            id="bulkTonAmount" />
+                        </div>
+                    </form>
+                    <br>
+                    <div class="final-calculation">
+                        <button value="submit" id="calculate">Calculate</button>
+                    </div>
+                        <br>
+                        <br>
+                    <div class="reveal-results"><div class="total-container"><label class="total">Total: </label><input id="total" disabled /></div>
+                    
+                    <br /><br />
+                    <button class="calculator-contact" onclick="location.replace('contact.html')">Contact us for more accurate rates.</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!-- <span class="close">&times;</span> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- End Calculator Button and Container -->
+    <!-- Start About us landing -->
+    <div class="aboutUsLanding">
+        <img src="https://freightlinerplc.s3.amazonaws.com/img/About/aboutusimage.jpg" alt="landing containers image">
+        <div class="top-left">
+            <img src="assets/img/main/dots3.svg" alt="graphic dots">
+            <h1>About Us</h1> <br>
+            <p>Freightliner Logistics and Trading was founded in 2021. Despite the fact that we have
+                been in business for just over a year, we have undertaken and successfully delivered
+                several logistics projects for multiple organizations. <br><br>
+                We don’t choose shortcuts to deliver the goods and services our customers ordered.
+                We value your hard work and effort by giving you the best service the logistics industry
+                can provide. We put in our time, energy, expertise and passion to provide you with
+                futuristic logistic services. <br><br>
+                Even if our organization is a relatively new one, its founders and staff are not new
+                comers to the field. Most of us at Freightliner have been in the field for a long while.
+                We understand the operations of logistics and supply chain management very well.
+            </p><br>
+            <div class="aboutreadmore">
+                <p>Read more &ensp;</p>
+                <a href="#opening"><i class="fas fa-angle-down" alt="down arrow"></i></a>
+            </div>
+        </div>
+        <div id="opening"></div>
+    </div>
+    
+
+    <!-- End About us landing -->
+
+    <!-- Start Core values-->
+    <section class="corevaluesbanner">
+        <div class="corevaluetitle"></a>
+            <h3>CORE VALUES</h3>
+        </div>
+        <div class="infographic">
+            <div class="slide-up">
+                <div class="info-content">
+                    <p> At Freightliner, Our most treasured assets are our customers.
+                        In any situation , we put our customers’ needs first and
+                        We put in our knowledge and effort to meet every request.
+                    </p>
+                </div>
+                <div class="info-cover"><br>
+                    <div><img alt="Icon-Customer Satisfaction" src="assets/img/About/CustomerSatisfaction.png" alt="CustomerSatisfaction icon">
+                    </div>
+                    <span class="custom-span"></span>
+                    <div class="stat-header">
+                        Customer Satisfaction
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-up">
+                <div class="info-content">
+                    <p>The logistics industry is often
+                        criticized for unmet deadlines and broken promises. <br> Freightliner will put
+                        in the utmost effort to deliver your goods on time .</p>
+                </div>
+                <div class="info-cover">
+                    <br>
+                    <div><img alt="Icon-punctuality" src="assets/img/About/punctuality.png" alt="punctuality icon">
+                    </div>
+                    <span class="custom-span"></span>
+                    <div class="stat-header">
+                        Punctuality <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-up">
+                <div class="info-content">
+                    <p>We are well aware loyalty is a two-way traffic. <br>
+                        We provide you with quality service as we realize it is the perfect
+                        way to create loyal customers. </p>
+                </div>
+                <div class="info-cover">
+                    <br>
+                    <div><img alt="Icon-Loyalty" src="assets/img/About/customer-loyalty.png" alt="loyality icon">
+                    </div>
+                    <span class="custom-span"></span>
+                    <div class="stat-header">
+                        Loyalty
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-up">
+                <div class="info-content">
+                    <p>Our moral principles help us keep the integrity
+                        of our organization. <br> This is enforced by our observance of consistency, trust,
+                        accountability and doing business in a respectful manner. </p>
+                </div>
+                <div class="info-cover">
+                    <br>
+                    <div><img alt="Icon-Integrity" src="assets/img/About/Integrity.png" alt="integrity icon">
+                    </div>
+                    <span class="custom-span"></span>
+                    <div class="stat-header">
+                        Integrity<br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-up" id="infocoverlastchild">
+                <div class="info-content">
+                    <p>From customer service to the delivery of some of the trickiest products,
+                        we come up with the most innovative ways to guarantee the best service
+                        to the customers.</p>
+                </div>
+                <div class="info-cover">
+                    <br>
+                    <div><img alt="Icon-innovation" src="assets/img/About/innovation.png" alt="innovation icon">
+                    </div>
+                    <span class="custom-span"></span>
+                    <div class="stat-header">
+                        Innovation<br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Core values-->
+
+    <!-- start why choose us-->
+    <section class="whycontainer">
+        <h1>Why Choose Us</h1>
+        <div class="whyboxes">
+            <div class="whybox"><br><br>
+                Finding a business organization that keeps its promises, puts integrity first,
+                does business ethically and adhering to moral values is becoming difficult.
+                Freightliner is among the very few companies that are loyal to these principles.
+                We always put our customers’ needs first. To us, our customers are not one-time
+                clients but life time partners. To make this possible, we put our utmost effort
+                into everything we do.
+            </div>
+            <div class="whybox"><br><br>
+                We understand not only the logistics business environment but the ups and downs
+                of doing business in general. From the moment you step into our office until you
+                receive the last package, we are beside you. We help your organization move ahead
+                of its competitors by providing vital information that enhances your business and
+                deliver the best quality service the logistics industry can offer.
+            </div>
+        </div>
+    </section>
+    <!-- End why choose us-->
+
+    <!-- Start of what we offer-->
+    <div class="whatweoffercontainer">
+        <div class="whatweofferinfo">
+            <h1>What We Offer</h1>
+            <p>Freightliner Logistics and Trading is a fast growing logistics service provider.
+                Our prior rich expertise in the field helps us meet your distinct logistics needs and requests.
+                We provide you with a trailblazing logistics services. <br><br>
+                What do you want to be shipped? Flower? Medicine? Cars? Heavy Machinery or Chemicals ? We can do it all.
+                We know very well each item requires a special care. Moving a machinery needs a different organization
+                and preparation from moving a food item. This awareness helps us in providing you with the finest
+                service possible.
+                If you entrust us with your logistics demands, we will execute it flawlessly to the tiniest of details.
+            </p>
+            <a href="contact.html"> <button class="contactusbutton">Contact Us</button> </a>
+        </div>
+        <div class="whatweofferimage">
+            <img src="https://freightlinerplc.s3.amazonaws.com/img/About/whatweoffer.png" alt="what weoffer image">
+        </div>
+    </div>
+    <!-- End of what we offer -->
+
+ 
+
+    <!-- Start Partner logos-->
+    <section class="partnerlogoscontainer">
+        <div class="slider">
+            <h1>Our Partners</h1>
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="assets/img/About/logos/Hapag-Lloyd-China-Ltd-logo-modified.png" height="100" width="400"
+                        alt="partner logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/img/About/logos/cosco-logo-7.png" height="100" width="600"
+                        alt="partner logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/img/About/logos/ethiopian_airlines_logo-modified.png" height="100" width="300"
+                        alt="partner logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/img/About/logos/emirates-airlines-logo-png.png" height="100" width="300"
+                        alt="partner logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/img/About/logos/Maersk-Logo.png" height="100" width="250"
+                        alt="partner logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/img/About/logos/EgyptAir_f73137-modified.png" height="100" width="300"
+                        alt="partner logo" />
+                </div>
+               
+                <div class="slide">
+                    <img src="assets/img/About/logos/saudia-airlines-logo-png--7349-modified.png" height="100" width="250"
+                        alt="" />
+                </div>
+                <div class="slide">
+                    <img src="assets/img/About/logos/1200px-CMA_CGM_logo.svg_-1024x625.png" height="100" width="250"
+                        alt="partner logo" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Partner logos-->
+
+   <!-- Start pdflink -->
+ <div>
+    <a  class="pdflink" href = "assets/img/About/companyprofile.pdf" target="_blank"> 
+        <p> Read more on Freightliner Company Profile </p>
+    <i class="fas fa-angle-double-right"></i></a>
+    
+</div>
+<!-- end pdflink -->
+
+    <!-- Start Footer -->
+    <footer>
+        <div class="content">
+            <div class="left box">
+                <div class="upper">
+                    <div class="topic">Contact Us</div>
+                    <div class="adress">
+                        <a href="contact.html"><i class="fas fa-map-marker-alt"></i>&ensp;&nbsp; Biselex Building, 3rd
+                            floor.
+                            <br> &emsp;&emsp;Suite number 307 & 308</a>
+                    </div><br>
+                    <div class="phone">
+                        <a href="contact.html"><i class="fas fa-phone"></i>&ensp;&nbsp;+251 935 981 772
+                            <br> &emsp;&ensp;&nbsp;+251 960 437614
+                        </a>
+                    </div><br>
+                    <div class="email">
+                        <a href="contact.html"><i class="fas fa-envelope"></i>&ensp;&nbsp;infoermiasge@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="middle box">
+                <div class="topic">Quick Links</div>
+                <div class="quicklinks"><a href="index.html">Home</a></div>
+                <div><a href="services.html">Services</a></div>
+                <div><a href="About.html">About</a></div>
+                <div><a href="contact.html">Contact Us</a></div>
+                <div><a href="calculator.html">Get Estimate</a></div>
+            </div>
+            <div class="right box">
+                <div class="topic">Connect With Us</div>
+                <form action="https://formspree.io/f/mvoypelv" method="POST">
+                    <input type="text" name="email" placeholder="Enter email address">
+                    <input type="submit" value="Send">
+                    <div class="media-icons">
+                        <a href="https://www.facebook.com/FreightlinerPLC/"><i class="fab fa-facebook-f" alt="facebook icon"></i></a>
+                        <a href="https://www.instagram.com/freightplc/"><i class="fab fa-instagram" alt="instagram icon"></i></a>
+                        <a href="https://twitter.com/FreightPLC"><i class="fab fa-twitter" alt="twitter icon"></i></a>
+                        <a href="https://www.linkedin.com/company/freightliner-logistics-trading-plc/"><i class="fab fa-linkedin-in" alt="linkedin icon"></i></a>&emsp;&emsp;
+                        <a href="#"><i class="fas fa-angle-double-up"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="b-footer">
+            <p> &copy; Freightliner 2022 </p>
+        </div>
+    </footer>
+</div>
+    <!-- End Footer -->
+    <script type="text/javascript" src="assets/js/about.js"></script>
+    <script type="text/javascript" src="assets/js/calculator.js"></script>
+    <script type="text/javascript" src="assets/js/language.js"></script>
+</body>
+
+</html>

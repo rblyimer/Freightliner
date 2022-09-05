@@ -1,0 +1,462 @@
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+/* start of Landing Page */
+.aboutUsLanding {
+  position: relative;
+  color: #232350;
+  width: 100%;
+}
+.aboutUsLanding img {
+  width: 100%;
+  opacity: 90%;
+}
+.top-left {
+  position: absolute;
+  width: 69%;
+  top: 60px;
+  left: 200px;
+  padding: 50px;
+  margin: auto;
+  text-align: justify;
+  border-radius: 10px;
+  border-top-right-radius: 60px;
+  border-top-left-radius: 5px;
+}
+.top-left p {
+  font-weight: 500;
+}
+.top-left img {
+  position: absolute;
+  width: 10%;
+  top: -40px;
+  left: -40px;
+}
+.top-left:hover {
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+}
+.aboutreadmore {
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  border-radius: 20%;
+}
+.aboutreadmore p,
+a {
+  color: #232350;
+}
+.aboutreadmore a:hover {
+  transform: scale(1.5);
+}
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .top-left {
+    -webkit-backdrop-filter: blur(80px);
+    backdrop-filter: blur(80px);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0.5px 1px 0.5px rgba(0, 0, 0, 0.2);
+  }
+} 
+/* end of Landing Page */
+
+/* start of core values */
+.corevaluesbanner {
+  height: 50vh;
+  width:100%;
+  background-color: #ffd87c;
+}
+.corevaluetitle {
+  margin-top: -5px;
+  text-align: center;
+  color: #232350;
+  letter-spacing: 5px;
+  padding: 25px;
+  background-color: #ffd87c;
+}
+.corevaluetitle h3::before {
+  content: "─";
+  margin-right: 0.6em;
+  color: #232350;
+}
+.corevaluetitle h3::after {
+  content: "─";
+  margin-left: 0.6em;
+  color: #232350;
+}
+.infographic {
+  width: 90%;
+  margin: auto;
+}
+.slide-up {
+  position: relative;
+  overflow: hidden;
+  width: calc(20% - 2px);
+  height: 295px;
+  float: left;
+}
+.stat-header {
+  font-size: 16px;
+  font-weight: 500;
+  color: #232350;
+}
+.info-cover {
+  background-color: #ffd87c;
+  width: 100%;
+  height: 75%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+.info-cover img {
+  width: 70px;
+  margin-top: -50%;
+}
+.slide-up:hover .info-cover {
+  top: -85%;
+}
+.info-content {
+  padding: 25px;
+  color: #fff;
+  font-weight: 300;
+  background-color: #232350;
+  height: 77.5%;
+  width: 100%;
+  text-align: left;
+  font-family: "montserrat", sans-serif;
+  cursor: context-menu;
+}
+.custom-span {
+  width: 100px;
+  background: #232350;
+  height: 2px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+/* end of core values */
+
+/* start of why choose us */
+.whycontainer {
+  padding: 40px;
+  color: #fff;
+  background-color: #232350;
+}
+.whycontainer h1 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+  font-family: "open sans", serif;
+  color: #ffd87c;
+}
+.whycontainer h1::before {
+  content: "─";
+  margin-right: 0.6em;
+  color: #ffd87c;
+}
+.whycontainer h1::after {
+  content: "─";
+  margin-left: 0.6em;
+  color: #ffd87c;
+}
+.whyboxes {
+  background-color: #232350;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  height: 40%;
+}
+.whybox {
+  width: 40vw;
+  font-size: 1.1em;
+  font-weight: 300;
+  text-align: justify;
+  padding: 0 4vw 4vw;
+  border-right: 2px;
+  border-left: 0;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, #ffbd59, #38b6ff, #ffbd59) 1 100%;
+}
+.whybox:last-child {
+  border-right: 0;
+  text-align: justify;
+  margin-left: -40px;
+}
+/* End of why choose us */
+
+/* <!-- Start of what we offer--> */
+.whatweoffercontainer {
+  width: 1170px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: auto;
+  margin-top: -80px;
+  margin-bottom: -90px;
+  background-color: rgba(0, 100, 200, 1);
+}
+.whatweoffercontainer .whatweofferinfo {
+  width: 45%;
+  float: left;
+  margin-top: 130px;
+  color: #232350;
+}
+.whatweoffercontainer .whatweofferinfo h1 {
+  font-size: 32px;
+  margin: 0 0 20px;
+  line-height: 1.4;
+  color: #232350;
+}
+.whatweoffercontainer .whatweofferinfo p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #232350;
+}
+.whatweoffercontainer .whatweofferinfo a button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 30px;
+  margin-top: 30px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #232350;
+}
+
+.contactusbutton:hover {
+  background-color: #ffbd59;
+  letter-spacing: 4px;
+}
+.toprightdots {
+  position: absolute;
+  width: 10%;
+  top: -40px;
+  left: -40px;
+}
+.whatweoffercontainer .whatweofferinfo a p {
+  color: #fff;
+}
+.whatweoffercontainer .whatweofferimage {
+  width: 50%;
+  float: right;
+  margin-top: 35px;
+}
+.whatweoffercontainer .whatweofferimage img {
+  max-width: 100%;
+}
+/* End of what we offer */
+
+/* Start Partnerlogos */
+.partnerlogoscontainer h1 {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+  font-family: "open sans", serif;
+  color: #232350;
+}
+.partnerlogoscontainer h1::before {
+  content: "─";
+  margin-right: 0.6em;
+  color: #232350;
+}
+.partnerlogoscontainer h1::after {
+  content: "─";
+  margin-left: 0.6em;
+  color: #232350;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 180px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 180px;
+  position: absolute;
+  width: 100px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 12);
+}
+.slider .slide {
+  height: 140px;
+  width: 600px;
+}
+/* end Partnerlogos */
+
+.pdflink {
+  width: 50%;
+  padding: 20px 50px 20px 50px;
+  margin: 50px 50px 0 300px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #232350;
+  font-weight: 500;
+  background: #ffd87c;
+  overflow:hidden;
+}
+
+.pdflink:hover {
+  background: #fff;
+  color: #232350;
+}
+footer div a {
+  color: #f7f7f7;
+}
+
+
+/* start of mobile */
+@media only screen and (max-width: 650px) {
+  .calculator-button-container {
+    display: none;
+  }
+  /* landing */
+  .aboutUsLanding {
+    width: 100%;
+    background: linear-gradient(to right, #232350, #4286f4);
+    height: 150%;
+    padding: 25px;
+  }
+  .aboutUsLanding img {
+    display: none;
+  }
+  .top-left {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20%;
+    margin-top: -15%;
+    margin-left: -200px;
+  }
+/* corevalues */
+.corevaluesbanner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.infographic {
+  margin: auto;
+  width: 80%;
+  justify-content: center;
+}
+.info-content {
+  display: none;
+}
+.slide-up {
+  margin-bottom: -100px;
+  width: 50%;
+  float: center;
+}
+#infocoverlastchild{
+  display: none;
+}
+.info-cover {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  margin-top: -30px;
+}
+.slide-up:hover .info-cover {
+  top: 0%;
+}
+  /* why us */
+  .whyboxes {
+    border-image: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+  }
+  .whybox {
+    width: 100%;
+    text-align: center;
+    border-style: none;
+    margin-top: -40px;
+    border-image: none;
+  }
+  .whybox:last-child {
+    text-align: center;
+    margin: auto;
+    margin-top: -40px;
+    border-style: none;
+    border-image: none;
+  }
+  .whycontainer h1 {
+    font-size: small;
+  }
+  /* what we offer */
+  .whatweoffercontainer {
+    width:100%;
+    margin-top: -120px;
+  }
+  .whatweofferinfo {
+    min-width: 100%;
+    padding: 30px;
+    text-align: justify;
+  }
+  .whatweofferinfo a {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .whatweofferimage {
+    display: none;
+  }
+  /* logos */
+  .partnerlogoscontainer {
+    margin-top: 600px;
+  }
+  .slider h1 {
+    letter-spacing: normal;
+    text-transform:none;
+  }
+ /* pdflink */
+  .pdflink {
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+}
+/* end of mobile */

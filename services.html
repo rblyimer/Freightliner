@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Freightliner</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/main/favicon.svg">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/services.css">
+    <link rel="stylesheet" href="assets/css/calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <!-- page loader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- language translator -->
+    <!-- <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="/path/to/cdn/jquery.slim.min.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ includedLanguages: 'en,am', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script> -->
+    <!-- language translator -->
+</head>
+
+<body>
+    <!-- nav bar -->
+    <header>
+        <!-- Web nav bar -->
+        <a href="index.html"><img src="assets/img/main/logo.png" alt="Logo" class="Sitelogo" /></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="current" href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact </a></li>
+                <li><a href="calculator.html">Get Estimate</a></li>
+            </ul>
+        </nav>
+        <!-- <div id="google_translate_element"></div> -->
+        <!-- Web nav bar -->
+        <!-- Mobile nav bar -->
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu"><br>
+                <li><a href="index.html">Home</a></li><br>
+                <li><a href="services.html">Services</a></li><br>
+                <li><a href="about.html">About</a></li><br>
+                <li><a href="contact.html">Contact Us</a></li><br>
+                <li><a href="calculator.html">Get Estimate</a></li><br>
+            </ul>
+        </div>
+        <!-- Mobile nav bar -->
+    </header>
+    <!-- nav bar -->
+    <!-- Calculator Button and Container -->
+    <div class="calculator-button-container">
+    <button class="calculator-button" onclick="revealModal()" data-type="modal">Get Estimate</button>
+</div>
+<div id="modal-calculator">
+    <div class="modal-content">
+        <div class="modal-header">
+            
+            <span class="close" onclick="closeModal()">Close</span>
+        </div>
+        <div class="modal-body">
+            <h1 class="title">Shipping Estimate Price</h1>
+            <div class="tip">
+                <br />
+                <form>
+                    <div class="import-export">
+                    <p>Please select Import or Export:</p>
+                    <input type="radio" id="import" name="import-export" value="import">
+                    <label for="import">Import</label><br>
+                    <input type="radio" id="export" name="import-export" value="export">
+                    <label for="export">Export</label>
+                    <br>
+                    </div>
+                    <div class="bulk-container-import">
+                        <br>
+                    <p>Please select Break Bulk or Containerized:</p>
+                    <input type="radio" id="bulk" name="bulk-container-import" value="bulk">
+                    <label for="bulk">Break Bulk</label><br>
+                    <input type="radio" id="container" name="bulk-container-import" value="container">
+                    <label for="container">Containerized</label><br>
+                    </div>
+                    <div class="bulk-container-export">
+                        <br>
+                        <p>Please select Containerized (Break Bulk coming soon):</p>
+                        <input type="radio" id="bulk2" name="bulk-container-export" value="bulk">
+                        <label for="bulk">Break Bulk</label><br>
+                        <input type="radio" id="container2" name="bulk-container-export" value="container">
+                        <label for="container">Containerized</label><br>
+                    </div>
+                    <div class="truck-rail">
+                        <br>
+                    <p>Please select Mode of Transportation:<br>(Unimodal-From Djibouti to Addis Ababa. Contact us
+                        for more destination rates.)</p>
+
+                    <input type="radio" id="truck" name="Transportation" value="truck" required>
+                    <label for="truck">Truck</label><br>
+                    <input type="radio" id="rail" name="Transportation" value="rail" required>
+                    <label for="rail">Rail</label><br>
+                    </div>
+                   
+                    
+                    <p class="finalSelection">If shipping by Break Bulk, choose Tons and enter the amount of tons of the goods. <br> If
+                        shipping by Container, choose 20 or 40 feet container and enter how many containers will be
+                        needed.</p>
+                    <div class="containers-selection">
+                        <br>
+                        <p>Please checkmark both or either boxes and enter in amount.</p>
+                    <input type="checkbox" id="twentyFeet" name="Shipping Amount" value="twentyFeet"> <label>Number of
+                        20 feet containers: </label><input id="twentyContainerAmount"><br>
+                    <input type="checkbox" id="fortyFeet" name="Shipping Amount" value="fortyFeet"> <label>Number of 40
+                        feet containers:</label> <input id="fortyContainerAmount"><br>
+                    </div>
+                    <div class="tons-input">
+                        <br>
+                        <p>Please enter amount of tons:</p>
+                    <label>Tons:</label> <input
+                        id="bulkTonAmount" />
+                    </div>
+                </form>
+                <br>
+                <div class="final-calculation">
+                    <button value="submit" id="calculate">Calculate</button>
+                </div>
+                    <br>
+                    <br>
+                <div class="reveal-results"><div class="total-container"><label class="total">Total: </label><input id="total" disabled /></div>
+                
+                <br /><br />
+                <button class="calculator-contact">Contact us for more accurate rates.</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+</div>
+
+    <!-- End Calculator Button and Container -->
+
+    <!-- start of main services -->
+    <section id="sec">
+        <h2>Main Services</h2>
+        <ul>
+            <li>
+                <span class="fas fa-plane-departure"></span>
+
+                <h3>Air Freight</h3>
+                <p>Our Air cargo system is designed to be used by our global importers and exporters to get
+                    goods somewhere quickly and reliably. </p>
+            </li>
+            <li><span class="fas fa-ship"></span>
+                <h3>Sea Freight</h3>
+                <p> When you start to ship freight at high volumes, it’s time to consider our most effective and
+                    affordale
+                    ocean freight. </p>
+            </li>
+            <li><span class="fas fa-train"></span>
+                <h3>Inland Haulage</h3>
+                <p>through Land or rail Inland haulage is one of our specialties. We provide
+                    scheduled planning for most efficient delivery</p>
+            </li>
+            <li>
+                <span class="fas fa-warehouse"></span>
+                <h3>Warehousing</h3>
+                <p>We work with many warehousing and storage facilities and provide
+                    a reliable storage for any required period of time. </p>
+            </li>
+
+        </ul>
+    </section>
+    <!-- end of main services -->
+
+    <!-- Start of previous projects -->
+    <section class="servicescarousel">
+        <div class="previousprojectstitle"></a>
+            <h3>Previous Projects </h3>
+        </div>
+        <div class="carousel">
+            <div class="graphicdots"><img src="assets/img/main/dots3.svg" alt="graphic dots"></div>
+            <div class="carousel-inner">
+                <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden=""
+                    checked="checked">
+                <div class="carousel-item">
+                    <img src="https://freightlinerplc.s3.amazonaws.com/img/services/oilandgas.jpg" width:100%
+                        height:50%>
+                    <h2> Oil and Gas</h2>
+                    <p> We have cleared and transported for the re-exportation oil well drilling rig from Ethiopia to
+                        UAE. We had also
+                        delivered different chemicals and equipments.</p>
+                </div>
+
+                <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                <div class="carousel-item">
+                    <img src="https://freightlinerplc.s3.amazonaws.com/img/services/electric.jpg">
+                    <h2> Electric Power Companies</h2>
+                    <p> We have transported transmission line equipments, tower parts, and accessories for
+                        the Ethiopian Electric Utility and Ethiopian Electric Power Sub Contractors.</p>
+                </div>
+
+                <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                <div class="carousel-item">
+                    <img src="https://freightlinerplc.s3.amazonaws.com/img/services/farming.jpg">
+                    <h2> Farming</h2>
+                    <p> We have worked with various companies to import and export a number of farm equipments.</p>
+                </div>
+
+                <input class="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
+                <div class="carousel-item">
+                    <img src="https://freightlinerplc.s3.amazonaws.com/img/services/trading.jpg" height="500"
+                        width="500">
+                    <h2> Trading</h2>
+                    <p> The range of goods we cleared for trading companies include plastic,
+                        food and beverage, fabrics, garment, electronics, machinery and vehicles.</p>
+                </div>
+
+                <input class="carousel-open" type="radio" id="carousel-5" name="carousel" aria-hidden="true" hidden="">
+                <div class="carousel-item">
+                    <img src="https://freightlinerplc.s3.amazonaws.com/img/services/irrigation.jpg">
+                    <h2> Irrigation</h2>
+                    <p> We have delivered PVC, UPVC, HDP, DCI and GS Pipes, pumps,
+                        generators and related equipments for several suppliers.</p>
+                </div>
+
+                <input class="carousel-open" type="radio" id="carousel-6" name="carousel" aria-hidden="true" hidden="">
+                <div class="carousel-item">
+                    <img src="https://freightlinerplc.s3.amazonaws.com/img/services/sugarFactory.jpg">
+                    <h2> Sugar Factories</h2>
+                    <p> We have handled the delivery of containerized and break bulk construction materials machinery
+                        and raw materials for commissioning of Tendaho Sugar Factory.</p>
+                </div>
+
+                <input class="carousel-open" type="radio" id="carousel-7" name="carousel" aria-hidden="true" hidden="">
+                <div class="carousel-item">
+                    <img src="https://freightlinerplc.s3.amazonaws.com/img/services/manufacturing.jpg">
+                    <h2> Manufacturing</h2>
+                    <p> So far we have taken part in executing the import & export shipments of manufacturing
+                        equipment during commissioning and after production.</p>
+                </div>
+
+                <label for="carousel-7" class="carousel-control prev control-1">‹</label>
+                <label for="carousel-2" class="carousel-control next control-1">›</label>
+
+                <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+                <label for="carousel-3" class="carousel-control next control-2">›</label>
+
+                <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+                <label for="carousel-7" class="carousel-control next control-3">›</label>
+
+                <label for="carousel-3" class="carousel-control prev control-4">‹</label>
+                <label for="carousel-5" class="carousel-control next control-4">›</label>
+
+                <label for="carousel-4" class="carousel-control prev control-5">‹</label>
+                <label for="carousel-6" class="carousel-control next control-5">›</label>
+
+                <label for="carousel-5" class="carousel-control prev control-6">‹</label>
+                <label for="carousel-7" class="carousel-control next control-6">›</label>
+
+                <label for="carousel-6" class="carousel-control prev control-7">‹</label>
+                <label for="carousel-1" class="carousel-control next control-7">›</label>
+            </div>
+        </div>
+    </section>
+    <!-- end of previous projects -->
+
+    <!-- start of additional services -->
+    <div class="additionalservicestitle"></a>
+        <h3>Additional Services</h3>
+    </div>
+    <section class="page-contain1">
+        <a class="data-card">
+            <h3><i class="fas fa-boxes"></i></h3>
+            <h4>Packaging</h4>
+            <p>Packaging of items for moving and distribution.</p>
+        </a>
+        <a class="data-card">
+            <h3><i class="fas fa-clipboard-list"></i></h3>
+            <h4>Documentation</h4>
+            <p>Preparation of import and export documents for customers.</p>
+        </a>
+        <a class="data-card">
+            <h3><i class="fas fa-dolly"></i></h3>
+            <h4>Cargo Handling</h4>
+            <p>Handling, overhauling, and labeling of cargo.</p>
+        </a>
+    </section>
+    <section class="page-contain2">
+        <a class="data-card">
+            <h3><i class="fas fa-chart-line"></i></h3>
+            <h4>Consultancy</h4>
+            <p>Consultancy service for carriage and distribution.</p>
+        </a>
+        <a class="data-card">
+            <h3><i class="fas fa-handshake"></i></h3>
+            <h4>promote relation</h4>
+            <p>Facilitate customer's relationship with external stakeholders.</p>
+        </a>
+        <a class="data-card">
+            <h3><i class="fas fa-truck-loading"></i></h3>
+            <h4>Guidance</h4>
+            <p>Advisement service related to logistics and investment.</p>
+        </a>
+    </section>
+    <!-- end of additional services -->
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="content">
+            <div class="left box">
+                <div class="upper">
+                    <div class="topic">Contact Us</div>
+                    <div class="adress">
+                        <a href="contact.html"><i class="fas fa-map-marker-alt"></i>&ensp;&nbsp; Biselex Building, 3rd
+                            floor.
+                            <br> &emsp;&emsp;Suite number 307 & 308</a>
+                    </div><br>
+                    <div class="phone">
+                        <a href="contact.html"><i class="fas fa-phone"></i>&ensp;&nbsp;+251 935 981 772
+                            <br> &emsp;&ensp;&nbsp;+251 960 437614
+                        </a>
+                    </div><br>
+                    <div class="email">
+                        <a href="contact.html"><i class="fas fa-envelope"></i>&ensp;&nbsp;infoermiasge@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="middle box">
+                <div class="topic">Quick Links</div>
+                <div class="quicklinks"><a href="index.html">Home</a></div>
+                <div><a href="services.html">Services</a></div>
+                <div><a href="About.html">About</a></div>
+                <div><a href="contact.html">Contact </a></div>
+                <div><a href="calculator.html">Get Estimate</a></div>
+            </div>
+            <div class="right box">
+                <div class="topic">Connect With Us</div>
+                <form action="https://formspree.io/f/mvoypelv" method="POST">
+                    <input type="text" name="email" placeholder="Enter email address">
+                    <input type="submit" value="Send">
+                    <div class="media-icons">
+                        <a href="https://www.facebook.com/FreightlinerPLC/"><i class="fab fa-facebook-f" alt="facebook icon"></i></a>
+                        <a href="https://www.instagram.com/freightplc/"><i class="fab fa-instagram" alt="instagram icon"></i></a>
+                        <a href="https://twitter.com/FreightPLC"><i class="fab fa-twitter" alt="twitter icon"></i></a>
+                        <a href="https://www.linkedin.com/company/freightliner-logistics-trading-plc/"><i class="fab fa-linkedin-in" alt="linkedin icon"></i></a>&emsp;&emsp;
+                        <a href="#"><i class="fas fa-angle-double-up"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="b-footer">
+            <p> &copy; Freightliner 2022 </p>
+        </div>
+    </footer>
+    <!-- Footer -->
+    <script type="text/JavaScript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/calculator.js"></script>
+</body>
+
+</html>
