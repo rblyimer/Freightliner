@@ -299,11 +299,13 @@ footer .content .right input[type="submit"] {
   color: #f7f7f7;
   background: #232350;
   outline: none;
-  border-radius: 2px;
+  border-radius: 3px;
   cursor: pointer;
   border: 1px solid #ffbd59;
   transition: all 0.3s ease-in-out;
   text-align: center;
+  justify-items: center;
+  justify-content: center;
 }
 .content .right input[type="submit"]:hover {
   background: #ffbd59;
