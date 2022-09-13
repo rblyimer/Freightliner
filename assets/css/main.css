@@ -295,15 +295,15 @@ footer .content .right input[type="text"] {
 footer .content .right input[type="submit"] {
   height: 40px;
   width: 20%;
-  font-size: 14px;
+  font-size: 13px;
   color: #f7f7f7;
   background: #232350;
   outline: none;
-  border-radius: 5px;
-  letter-spacing: 1px;
+  border-radius: 2px;
   cursor: pointer;
   border: 1px solid #ffbd59;
   transition: all 0.3s ease-in-out;
+  text-align: center;
 }
 .content .right input[type="submit"]:hover {
   background: #ffbd59;
