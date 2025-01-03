@@ -198,7 +198,7 @@
             </div>
         </div>
         <div class="b-footer">
-            <p> &copy; Freightliner 2022 </p>
+            <p> &copy; Freightliner <span id="currentYear"></span></p>
         </div>
     </footer>
 </div>
@@ -207,6 +207,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
     <script type="text/JavaScript" src="assets/js/main.js"></script>
     <script type="text/JavaScript" src="assets/js/about.js"></script>
+    <script>
+        const currentYear = new Date(Date.now()).getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+    </script>
 </body>
 
 </html>

@@ -78,11 +78,11 @@
                 </p>
                 <a href="#opening">Learn more &emsp; <i class="fas fa-angle-down" alt="arrow showing down"></i></a>
             </div>
-            <ul class="social">
+            <!-- <ul class="social">
                 <li><a href="https://www.instagram.com/freightplc/"><img src="https://i.ibb.co/ySwtH4B/instagram.png" alt="instagram icon"></a></li>
                 <li><a href="https://www.facebook.com/FreightlinerPLC/"><img src="https://i.ibb.co/x7P24fL/facebook.png" alt="facebook icon"></a></li>
                 <li><a href="https://twitter.com/FreightPLC"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png" alt="twitter icon"></a></li>
-            </ul>
+            </ul> -->
         </section>
     </section>
     <!-- end of Hero Section  -->
@@ -428,7 +428,7 @@
             </div>
         </div>
         <div class="b-footer">
-            <p> &copy; Freightliner 2022 </p>
+            <p> &copy; Freightliner <span id="currentYear"></span></p>
         </div>
     </footer>
 </div>
@@ -437,6 +437,10 @@
     <script type="text/javascript" src="assets/js/about.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/calculator.js"></script>
+    <script>
+        const currentYear = new Date(Date.now()).getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+    </script>
 </body>
 
 </html>

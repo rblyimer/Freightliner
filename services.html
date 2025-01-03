@@ -361,12 +361,16 @@
             </div>
         </div>
         <div class="b-footer">
-            <p> &copy; Freightliner 2022 </p>
+            <p> &copy; Freightliner <span id="currentYear"></span></p>
         </div>
     </footer>
     <!-- Footer -->
     <script type="text/JavaScript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/calculator.js"></script>
+    <script>
+        const currentYear = new Date(Date.now()).getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+    </script>
 </body>
 
 </html>
